@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Remove merged branches remotely && locally
+# https://github.com/arc90/git-sweep
+
+git-sweep cleanup
+git remote add local $(pwd)
+git-sweep cleanup --origin=local
+git remote remove local
